@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% comment %} {% load staticfiles %} {% endcomment %}
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title >LOGIN | Rp Nersery </title>
+</head>
+<style>
+       
+    body, html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url('https://deserthorizonnursery.com/wp-content/uploads/2016/10/desert-horizon-nursery-plants-homepage.jpg');
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container{
+
+    margin: 220px 328px;
+    /* padding-top: 400px; */
+    padding-left: 20px;
+    background-color: brown;
+    
+  
+}
+.container #header{
+  font-size: x-large;
+  
+}
+label{
+  font-size: x-large;
+}
+</style>
+
+<body class="bg">
+
+<h1 style='margin:16px 496px;border: 2px solid yellowgreen;font-size: 80px;background-color: teal;border-radius: 30px;'>Rp Nursery Center</h1>
+<div class="container" >
+  <div id="header">
+    <h1 style="color:whitesmoke;">User | Login </h1>
+  </div>
+  <div id="main">
+    <form method="post">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td><label for="username" style="color:black;">Username</label></td>
+          <td><input type="text" name="username" id="username"></td>
+        </tr>
+        <tr>
+          <td><label for="password" style="color:black;">Password</label></td>
+          <td><input type="password" name="password" id="password"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" value="Login"></td>
+        </tr>
+      </table>
+    </form>
+    <p>{{error}}</p>
+  </div>
+  <div id="nav">
+    <a href="/signup" style="color: white;">Don't have an account?<strong>signup</strong></a>
+  </div>
+  
+</div>  
+<h1 style='margin:-131px 697px;border: 2px solid yellowgreen;font-size: 40px;background-color:black;border-radius: 13px;'><a href="/manager">Manager Login</a></h1>
+</body>
+
+</html>

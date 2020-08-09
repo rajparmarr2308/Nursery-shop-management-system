@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- {% load static %} -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <!-- <link rel="stylesheet" href="{%static 'style.css' %}"> -->
+    
+</head>
+<style>
+       
+    body, html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url('https://wallpaperplay.com/walls/full/3/0/7/83273.jpg');
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+
+
+
+
+ 
+<body class="bg">
+    <div class="container" style="margin: 0px 130px;">
+    
+    <h2>Sign up | Rp Nuesery</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+            {% if field.help_text %}
+            <small style="color: grey">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
+        {% endfor %}
+        <button type="submit" style="padding: 10px 20px;margin-bottom: 5px;">Sign up</button></br>
+    </form>
+    <a href="/"><button  style="padding: 10px 20px;margin-bottom: 5px;">go back to home</button></a>
+   
+</div>
+</body>
+
+</html>
