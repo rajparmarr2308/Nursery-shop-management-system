@@ -1,5 +1,7 @@
 # Nursery-shop-management-system
 
+This Project is Built Using django framework .
+
                    This is the nursery Shop management project.
                             where 
                                   user can:-
